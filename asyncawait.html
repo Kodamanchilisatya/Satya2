@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async 
+        // async function myFun() {
+        //     return "Hello";
+        // }
+        // myFun().then(console.log);
+        // myFun().then(result => document.write("async result: " + result + "   "));
+
+        // // await
+        // async function Waitsometime() {
+        //     let res = await myFun();
+        //     return res;
+        // }
+        // Waitsometime().then(res => document.write("await result: " + res + "   "));
+
+        // Fetch data with async and await
+        // async function getUserData() {
+        //     let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        //     let data = await response.json();
+        //     document.write("userData: " + JSON.stringify(data) + "\n");
+        // }
+        // getUserData();
+
+        // // Using timer with async and await
+        // async function delayMessage() {
+        //     await new Promise(resolve => setTimeout(resolve, 2000));
+        //     document.write("timerMessage: Timer is 2 seconds have passed!\n");
+        // }
+        // delayMessage();
+
+        // // Using Promise.all for multiple asynchronous tasks
+        // async function getAllData() {
+        //     let [user, post] = await Promise.all([
+        //         fetch("https://jsonplaceholder.typicode.com/users/1").then(res => res.json()),
+        //         fetch("https://jsonplaceholder.typicode.com/posts/1").then(res => res.json())
+        //     ]);
+
+        //     document.write("allData: " + JSON.stringify(user) + "\nPost: " + JSON.stringify(post) + "\n");
+        // }
+        // getAllData();
+
+        // // Using try...catch for error handling
+        async function getUserData1() {
+            try {
+                let response = await fetch("https://jsonplaceholder.typicode.com/users/invalid-id");
+                let data = await response.json();
+                document.write("errorData: " + JSON.stringify(data));
+            } catch (error) {
+                document.write("errorData in catch: " + error.message);
+            }
+        }
+        getUserData1();
+
+    </script>
+</body>
+</html>
