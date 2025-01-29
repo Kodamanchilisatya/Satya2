@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+     }
+
+     async function bakeCake() {
+       document.write("Step 1: Putting the cake in the oven<br>");
+        await wait(3000);
+        document.write("Step 4: Cake is baked!<br>");
+         return "Baked Cake";
+      }
+    async function prepareFrosting() {
+        document.write("Step 2: Preparing the frosting<br>");
+        await wait(2000);
+        document.write("Step 3: Frosting is ready!<br>");
+        return "Frosting";
+     }
+    async function makeCake() {
+        document.write("Starting the cake-making process<br>");
+        let cakePromise = bakeCake();
+        let frosting = await prepareFrosting();
+        let cake = await cakePromise;
+
+    document.write(`Step 5: Frosting the ${cake} with ${frosting}<br>`);
+    await wait(1000); 
+    document.write("Step 6: Cake is ready to serve!");
+}
+
+makeCake();
+
+   </script> 
+</body>
+</html>
