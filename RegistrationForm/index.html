@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <small class="error" id="emailError"></small><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone">
+            <small class="error" id="phoneError"></small><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <small class="error" id="passwordError"></small><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <small class="error" id="dobError"></small>
+            <p id="ageDisplay"></p><br>
+
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="aadhar">
+            <small class="error" id="aadharError"></small><br><br>
+
+            <label for="pan">PAN Card Number:</label>
+            <input type="text" id="pan" name="pan">
+            <small class="error" id="panError"></small><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
